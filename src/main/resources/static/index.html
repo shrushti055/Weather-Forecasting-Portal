@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Portal</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div id="animatedBg"></div>
+    <div class="clouds"></div>
+    <div class="stars"></div>
+    <div class="rain"></div>
+    <div class="fog"></div>
+    <div class="sunGlow"></div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-left">
+            <h2>Weather Portal</h2>
+        </div>
+        <div class="nav-right">
+            <button id="themeToggle" title="Toggle dark / light mode">
+                🌙
+            </button>
+            <button id="locateBtn" title="Use current location">
+                📍 Auto Detect
+            </button>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="container">
+
+        <!-- Search -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Search city (e.g., Baramati, Pune)..."
+            />
+            <button id="searchBtn">Search</button>
+        </div>
+
+        <!-- Current Weather -->
+        <section class="current">
+            <h1 id="cityName">--</h1>
+            <p id="currentDate" class="date-text">--</p>
+            <p id="currentTime" class="time-text">--</p>
+            <h2 id="temperature">--°</h2>
+            <p id="weatherDesc">--</p>
+        </section>
+
+        <!-- Hourly Forecast -->
+        <h3 class="section-title">Hourly Forecast</h3>
+        <div class="hourly" id="hourlyBox"></div>
+
+        <!-- Weekly Forecast -->
+        <h3 class="section-title">Weekly Forecast</h3>
+        <div class="weekly" id="weeklyBox"></div>
+
+        <!-- Info cards -->
+        <div class="cards">
+            <div class="card">
+                <h3>Humidity</h3>
+                <p id="humidity">--%</p>
+            </div>
+
+            <div class="card">
+                <h3>Wind</h3>
+                <p id="wind">-- km/h</p>
+            </div>
+
+            <div class="card">
+                <h3>UV Index</h3>
+                <p id="uv">N/A</p>
+            </div>
+
+            <div class="card">
+                <h3>Dew Point</h3>
+                <p id="dew">N/A</p>
+            </div>
+        </div>
+
+        <br /><br />
+
+        <!-- Map -->
+        <div class="map-wrapper">
+            <iframe
+                id="gmap"
+                width="100%"
+                height="300"
+                style="border:0; border-radius: 16px;"
+                loading="lazy"
+                allowfullscreen
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=India&output=embed"
+            ></iframe>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
